@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="basepackage.Controller">
+   <HBox BorderPane.alignment="CENTER">
+      <children>
+         <Label text="Stocks:">
+            <HBox.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </HBox.margin></Label>
+         <Region prefHeight="31.0" prefWidth="206.0" />
+         <Label text="Portfolio:">
+            <HBox.margin>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </HBox.margin></Label>
+      </children>
+   </HBox>
+   <HBox>
+      <children>
+         <ListView fx:id="stockListView" onMouseClicked="#stockListViewClick" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+         <ListView fx:id="portfolioListView" onMouseClicked="#portfolioListViewClick" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+      </children>
+   </HBox>
+   <HBox>
+      <children>
+         <TextField fx:id="tickerField" disable="true" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </HBox.margin>
+         </TextField>
+         <TextField fx:id="nameField" disable="true" layoutX="10.0" layoutY="10.0" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </HBox.margin>
+         </TextField>
+         <TextField fx:id="priceField" disable="true" layoutX="10.0" layoutY="10.0" HBox.hgrow="ALWAYS">
+            <HBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </HBox.margin>
+         </TextField>
+      </children>
+   </HBox>
+   <GridPane>
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <children>
+               <Label text="Amount: " GridPane.valignment="CENTER" HBox.hgrow="ALWAYS">
+                  <HBox.margin>
+                     <Insets bottom="10.0" left="28.0" right="5.0" top="15.0" />
+                  </HBox.margin>
+               </Label>
+               <TextField fx:id="amountField" maxWidth="-Infinity" prefHeight="25.0" prefWidth="64.0" HBox.hgrow="ALWAYS">
+                  <HBox.margin>
+                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  </HBox.margin></TextField>
+            </children>
+         </HBox>
+         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+            <children>
+               <Button fx:id="buyButton" layoutX="40.0" layoutY="4.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#buyButtonClick" prefHeight="25.0" prefWidth="90.0" text="Buy" />
+            </children>
+         </Pane>
+         <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
+            <children>
+               <Button fx:id="sellButton" layoutX="40.0" layoutY="4.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#sellButtonClick" prefHeight="25.0" prefWidth="90.0" text="Sell" />
+            </children>
+         </Pane>
+      </children>
+   </GridPane>
+   <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="507.0">
+      <children>
+         <Button fx:id="loginButton" maxHeight="-Infinity" mnemonicParsing="false" onAction="#loginButtonClick" prefHeight="25.0" prefWidth="90.0" text="Log in">
+            <HBox.margin>
+               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </HBox.margin></Button>
+      </children></HBox>
+</VBox>
